@@ -46,23 +46,23 @@ script:
           -DCMAKE_INSTALL_PREFIX=$HOME/install
           -Dfletch_DIR=/opt/kitware/fletch
           -DKWIVER_ENABLE_ARROWS=ON
-          -DKWIVER_ENABLE_CERES=ON
-          -DKWIVER_ENABLE_C_BINDINGS=ON
+          -DKWIVER_ENABLE_CERES=OFF
+          -DKWIVER_ENABLE_C_BINDINGS=OFF
           -DKWIVER_ENABLE_DOCS=OFF
           -DKWIVER_ENABLE_LOG4CXX=OFF
-          -DKWIVER_ENABLE_LOG4CPLUS=ON
-          -DKWIVER_ENABLE_OPENCV=ON
+          -DKWIVER_ENABLE_LOG4CPLUS=OFF
+          -DKWIVER_ENABLE_OPENCV=OFF
           -DKWIVER_ENABLE_PROJ=ON
-          -DKWIVER_ENABLE_PROCESSES=ON
+          -DKWIVER_ENABLE_PROCESSES=OFF
           -DKWIVER_ENABLE_PYTHON=OFF
-          -DKWIVER_ENABLE_SPROKIT=ON
+          -DKWIVER_ENABLE_SPROKIT=OFF
           -DKWIVER_ENABLE_TESTS=ON
           -DKWIVER_ENABLE_TOOLS=ON
-          -DKWIVER_ENABLE_TRACK_ORACLE=ON
+          -DKWIVER_ENABLE_TRACK_ORACLE=OFF
           -DKWIVER_ENABLE_VISCL=OFF
-          -DKWIVER_ENABLE_VXL=ON
+          -DKWIVER_ENABLE_VXL=OFF
           -DKWIVER_USE_BUILD_TREE=ON
           ../
   - make -j2
   - make install
-  - ctest
+  - ctest -V -R test-core_geo_point-conversion
