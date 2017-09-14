@@ -12,9 +12,9 @@ matrix:
         - C_COMPILER=gcc-4.8
         - CXX_COMPILER=g++-4.8
     - compiler: clang
-      env: # default clang is version 3.4
-        - C_COMPILER=clang
-        - CXX_COMPILER=clang++
+      env:
+        - C_COMPILER=clang-3.8
+        - CXX_COMPILER=clang++-3.8
 
 cache:
   directories:
@@ -30,6 +30,7 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+    - clang-3.8
     - libproj-dev
     - libgl1-mesa-dev
     - libxt-dev
