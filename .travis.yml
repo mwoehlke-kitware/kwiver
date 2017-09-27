@@ -65,4 +65,4 @@ script:
           ../
   - make -j2
   - make install
-  - ctest
+  - ctest -V -R descriptions
